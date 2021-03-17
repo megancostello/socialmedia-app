@@ -1,0 +1,49 @@
+
+
+  .user img {
+      height: 45px;
+      border-radius: 100%;
+  }
+  .user p {
+      font-weight: bold;
+  }
+  .user {
+    display: flex;
+    margin-left: 2%;
+    gap: 10px;
+  }
+
+  .post img{
+      object-fit: cover;
+  }
+
+  .icons {
+    display: flex;
+    margin-left: 2%;
+    gap: 10px;
+  }
+
+  .likes {
+    display: flex;
+    margin-left: 2%;
+    gap: 10px;
+
+  }
+
+  .com {
+    display: flex;
+    margin-left: 2%;
+    gap: 10px;
+  }
+
+  .com p {
+      margin: 0px;
+  }
+
+  .time {
+      color: gray;
+      margin-left: 2%;
+  }
+
+  
+  

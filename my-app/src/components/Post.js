@@ -12,7 +12,7 @@ function Post(props) {
                 <p>{props.user.id}</p>
             </div>
             <div className={css.post}>
-                <img src={props.post.photo} alt="Post Image"/>
+                <img src={props.post.photo} alt="Post Photo"/>
             </div>
             <div className={css.icons}>
                 <img src={publicUrl('/assets/like.svg')} alt="Like"/>

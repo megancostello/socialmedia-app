@@ -7,12 +7,12 @@ function Home() {
     const post = { 
         user:{
             id:"judy",
-            photo:"/assets/user1.png",
+            photo:"../../public/assets/user1.png",
         },
         post:{
             id:"post-1",
             userId:"judy",
-            photo:"/assets/post1.png",
+            photo:"../../public/assets/post1.png",
             desc:"#zootopia #excited",
             datetime: "2020-02-09T22:45:28Z"
         },

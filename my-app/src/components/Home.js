@@ -18,6 +18,7 @@ function Home(props) {
                     likes={findLikes(post, store)}
                     onLike={props.onLike} 
                     onUnlike={props.onUnlike}
+                    onComment={props.onComment}
                 />)}
     </div>
 	);

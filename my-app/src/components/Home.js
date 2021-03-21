@@ -12,7 +12,7 @@ function Home(props) {
             .map(post=>
                 <Post
                     key={post.id}
-                    user={fineUser(post, store)}
+                    user={findUser(post, store)}
                     post={post}
                     comments={findComments(post, store)}
                     likes={findLikes(post, store)}
@@ -23,7 +23,7 @@ function Home(props) {
 	);
 }
 
-function fineUser(post, store){
+function findUser(post, store){
     return store.users.find(user=>user.id===post.userId);
   }
 

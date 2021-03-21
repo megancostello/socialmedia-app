@@ -8,5 +8,43 @@
   .content{
     margin-top: 45px;
   }
+
+  .user img {
+    height: 75px;
+    border-radius: 100%;
+}
+.user p {
+    font-weight: bold;
+}
+
+.user {
+  display: flex;
+  margin-left: 2%;
+  gap: 10px;
+}
+
+.bio {
+  margin-left: 2%;
+}
+
+.followers {
+  display: flex;
+  margin-left: 2%;
+  gap: 10px;
+  width:95%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.followers p{
+  justify-content:center;
+  text-align: center;
+}
+
+  .posts{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
   
   

@@ -30,7 +30,7 @@ class App extends React.Component{
             case "explore": return <Explore/>;
             case "newpost": return <NewPost/>;
             case "activity": return <Activity/>;
-            case "profile": return <Profile/>;
+            case "profile": return <Profile store={this.state.store} />;
             default: return <Home/>;
         }
     }

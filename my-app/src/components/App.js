@@ -8,6 +8,7 @@ import NewPost from './NewPost';
 import Activity from './Activity';
 import Profile from './Profile';
 import initialStore from '../utils/initialStore';
+import uniqueId from '../utils/uniqueId';
 
 function App(){
     
@@ -20,7 +21,7 @@ function App(){
         switch(page){
             case "home": return <Home store={store} onLike={addLike} onUnlike={removeLike} onComment={addComment} />;
             case "explore": return <Explore/>;
-            case "newpost": return <NewPost/>;
+            case "newpost": return <NewPost  store={store} onPost={addPost} onCancel={cancelPost}/>;
             case "activity": return <Activity/>;
             case "profile": return <Profile store={store} />;
             default: return <Home/>;
@@ -62,6 +63,32 @@ function App(){
             comments:store.comments.concat(comment)
         });
       }
+
+      function addPost(photo, desc){
+		// TODO:
+		// 1. Create a new post object (use uniqueId('post') to create an id)
+		// 2. Update the store 
+		// 3. Call setPage to come back to the home page
+        const post = { // 1. Create a new post object (use uniqueId('post') to create an id)
+            id: uniqueId('post'),
+            userId: store.currentUserId,
+            photo,
+            desc,
+            datetime: new Date().toISOString()     
+          }
+          setStore({
+            ...store,
+              posts:store.posts.concat(post) // 2. Update the store 
+          });
+        setPage('home'); // 3. Call setPage to come back to the home page
+        }
+	function cancelPost(){
+		// TODO:
+		// 1. Call setPage to come back to the home page (we will use Router to improve this)
+        setPage('home'); 
+        }
+        // TODO: Pass "store", "addPost", "cancelPost" to <NewPost/>	
+    
 
    
     return (

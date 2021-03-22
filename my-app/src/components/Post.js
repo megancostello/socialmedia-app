@@ -5,7 +5,6 @@ import timespan from '../utils/timespan';
 
 
 function Post(props) {
-    console.log('comments are ', props.comments);
     function handleLike() {
         console.log('like');
         props.onLike(props.post.id);

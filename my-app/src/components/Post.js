@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import css from './Post.module.css';
 import publicUrl from '../utils/publicUrl';
 import timespan from '../utils/timespan';
+import {
+    Link
+  } from "react-router-dom";
 
 
 function Post(props) {
@@ -29,7 +32,10 @@ function Post(props) {
         <div className={css.allpost}>
             <div className={css.user}>
                 <img src={publicUrl(props.user.photo)} alt="Profile Pic"/>
-                <p>{props.user.id}</p>
+                
+                <Link to={"/profile/".concat(props.user.id)}>
+                    <p>{props.user.id}</p>
+                </Link>
             </div>
             <div className={css.post}>
                 <img src={publicUrl(props.post.photo)} alt="Post Photo"/>
@@ -50,12 +56,17 @@ function Post(props) {
             </div>
             <div className={css.comments}>
                 <div className={css.com}>
-                    <p><b>{props.post.userId}</b></p> <p>{props.post.desc}</p>
+                <Link to={"/profile/".concat(props.post.userId)}>
+                    <p><b>{props.post.userId}</b></p>
+                </Link> <p>{props.post.desc}</p>
                 </div>
                 <div>
                     {props.comments.map((c,idx) => (
                         <div className={css.com} key={idx}>
-                            <p><b>{c.userId}</b></p>
+                            
+                            <Link to={"/profile/".concat(c.userId)}>
+                                <p><b>{c.userId}</b></p>
+                            </Link>
                             <p>{c.text}</p>
                         </div>
                     ))}

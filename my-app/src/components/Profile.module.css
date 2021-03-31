@@ -46,5 +46,27 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
 }
+
+.followBtn{
+  background: #3897f0;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin:10px 0px;
+}
+.unfollowBtn{
+  background:transparent;
+  border: 1px solid #dbdbdb;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin:10px 0px;
+}
+/* this will change the cursor to indicate its clickability*/
+button{
+cursor:pointer;
+}
   
   

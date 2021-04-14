@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import css from './NewPost.module.css';
 import publicUrl from '../utils/publicUrl';
 import FileLoader from './FileLoader.js';
+import { StoreContext } from '../contexts/StoreContext';
 import {
   useHistory
 } from "react-router-dom";
@@ -12,6 +13,10 @@ function NewPost(props) {
   const [photo, setPhoto] = useState(null);
   const [error, setError] = useState(''); // to show an error message
   const history = useHistory();
+
+  let {
+    addPost
+  } = useContext(StoreContext);
 
   function handleFileDragEnter(e){
     setDragging(true);
@@ -52,7 +57,7 @@ function NewPost(props) {
 		// 4. Clear error msg
     e.preventDefault() // 1. Prevent default behavior
     try {
-      props.onPost(photo,desc);
+      addPost(photo,desc); //react context lab
       history.push('/');
     }
     catch (e) {
